@@ -54,7 +54,8 @@ const main = async () => {
     const shadeView = main.child("div").class.add("lios-card-container").style({
         "display": "none",
         "justify-content": "center",
-        "justify-self": "center"
+        "justify-self": "center",
+        "gap":"15px"
     });
     for (const shade of colorShades) {
         const shadeButton = shadesFilterButtons.colors().shadeButton(shade);
@@ -147,7 +148,8 @@ const main = async () => {
     const searchView = main.child("div").class.add("lios-card-container").style({
         "display": "none",
         "justify-content": "center",
-        "justify-self": "center"
+        "justify-self": "center",
+        "gap": "15px"
     });
     const searchBar = document.querySelector(".search-bar.pebble");
     let searchData = [];

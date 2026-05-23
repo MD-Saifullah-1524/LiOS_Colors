@@ -4,3 +4,6 @@
 [submodule "public/LiOS-Web-Utils"]
 	path = public/LiOS-Web-Utils
 	url = https://github.com/LiOS-org/LiOS-Web-Utils.git
+[submodule "public/LiOS-Colors-Utility"]
+	path = public/LiOS-Colors-Utility
+	url = https://github.com/LiOS-Org/LiOS-Colors-Utility.git

@@ -43,6 +43,12 @@ export const components = {
             buttonsContainer.colors().paletteButton(`srgb(${srgb})`);
             buttonsContainer.colors().paletteButton(`oklch(${oklch})`);
             buttonsContainer.colors().paletteButton(translucentColor);
+
+            palette.child("br");
+            
+            const generatePalette = palette.components().actionButton().text("Generate Palettes").on("click", () => {
+                window.location.href = `/generate-palette/?hex=${encodeURIComponent(hex)}`;
+            });
             
             return palette;
         }

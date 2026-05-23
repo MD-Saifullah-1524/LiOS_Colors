@@ -1,0 +1,30 @@
+.gen-input-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
+  gap: 5px;
+}
+.gen-palette-strip {
+  display: inline-block;
+  width: 150px;
+  height: 350px;
+  align-content: flex-end;
+}
+.gen-palette-strip-button {
+  width: fit-content;
+  display: flex;
+  justify-self: center;
+  align-self: bottom;
+  margin-bottom: 5px;
+}
+.gen-hero-box {
+  background: var(--frosted-color-2);
+  border: 2px outset var(--frosted-color-2);
+  color: var(--color-3);
+  justify-self: center;
+  
+  & h1{
+    text-align: center;
+  }
+}

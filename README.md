@@ -26,10 +26,16 @@
 ```bash
 git submodule add https://github.com/LiOS-org/LiOS-Colors-Data.git
 ```
-After submodule is added import it to your main CSS file:
+After submodule is run:
+
+```bash
+npm run build
+```
+
+then import it to your main css file:
 
 ```css
-@import url("${path-to-LiOS-Colors-Data}/translucent-colors.css");
+@import url("${path-to-LiOS-Colors-Data}/dist/translucent-colors.css");
 ```
 
 ## Usage

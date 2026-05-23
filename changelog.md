@@ -1,3 +1,23 @@
+## 3.3.0
+
+### New Features
+
+- Palettes Generator: A basic palette generator which utilizes [LiOS Colors Utility](https://github.com/LiOS-Org/LiOS-Colors-Utility) to generate palettes, you can either copy singular shades (hex) or copy the whole formatted CSS (normal and trasnlucent/frosted) shades.
+- Now [LiOS Colors Utility](https://github.com/LiOS-Org/LiOS-Colors-Utility) is bundles with the repository, kindly use 
+  ```bash
+  git submodule update --init --recursive
+  ```
+  after cloning to avoid any missing dependencies.
+
+### Bugfixes
+
+- Fixed padding in `shadeView` and `searchView`.
+- Fixed installation method.
+
+### Changes and Improvements
+
+- Removed `installation and usage` page, and now both of the instructions lives inside landing page.
+
 ## 3.2.1
 
 ## New Features
