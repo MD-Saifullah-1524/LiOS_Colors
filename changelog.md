@@ -3,7 +3,7 @@
 ### New Features
 
 - Palettes Generator: A basic palette generator which utilizes [LiOS Colors Utility](https://github.com/LiOS-Org/LiOS-Colors-Utility) to generate palettes, you can either copy singular shades (hex) or copy the whole formatted CSS (normal and trasnlucent/frosted) shades.
-- Now [LiOS Colors Utility](https://github.com/LiOS-Org/LiOS-Colors-Utility) is bundles with the repository, kindly use 
+- Now [LiOS Colors Utility](https://github.com/LiOS-Org/LiOS-Colors-Utility) is bundled with the repository, After cloning, run:
   ```bash
   git submodule update --init --recursive
   ```
