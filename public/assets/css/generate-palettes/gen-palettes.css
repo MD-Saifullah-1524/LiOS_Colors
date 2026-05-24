@@ -8,6 +8,7 @@
 .gen-palette-strip {
   display: inline-block;
   width: 150px;
+  min-width: 150px;
   height: 350px;
   align-content: flex-end;
 }

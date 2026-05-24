@@ -53,7 +53,8 @@ const paletteShadesGeneration = (inputData) => {
     const paletteContainer = paletteArea.child("div").style({
         "display": "flex",
         "flex-direction": "row",
-        "overflow": "auto"
+        "overflow": "auto",
+        "justify-content":"center"
     });
     palette.forEach((shade) => {
         const newPalette = paletteContainer.child("div").class.add("gen-palette-strip").style({
