@@ -1,10 +1,11 @@
 {
-    "$schema": "https://schema.liosorg.com/metadata/v1/schema.json",
+    "$schema": "https://schema.liosorg.com/metadata/v2/schema.json",
     "name": "LiOS Colors",
     "description": "LiOS-Colors is a browsable library of beautiful colors, it's main aim is to provide translucent colors for UI design. LiOS-Colors is a part of the LiOS-Org and is based on data from meodai/color-names.",
     "version": {
         "number": "3.3.1",
-        "code": 6
+        "code": 6,
+        "name":"Eastern Desert"
     },
     "github": "https://github.com/LiOS-Org/LiOS-Colors",
     "license": {
@@ -16,5 +17,9 @@
         "circle": "/assets/favicon/favicon-circle.svg",
         "squircle": "/assets/favicon/favicon-squircle.svg"
     },
-    "url": "https://colors.liosorg.com"
+    "url": "https://colors.liosorg.com",
+    "channel": "stable",
+    "OSS": true,
+    "tags": ["design"],
+    "LiOS-Project-Id": "a2cf7653-8504-4ba0-8b4a-4eeb3828341d"
 }
