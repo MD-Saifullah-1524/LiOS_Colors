@@ -31,7 +31,7 @@ export const components = {
             const translucentColor = `var(${hex.replace("#", "--")})`;
 
             const palette = this.child("div").class.add("color-palette", "lios-frosted-glass", "lios-card");
-            const colorCard = palette.child("div").class.add("palette-color").style({
+            const colorCard = palette.child("div").class.add("palette-color").style().set({
                 "background": hex,
                 "border": `2px inset ${hex}`
             });
@@ -53,7 +53,7 @@ export const components = {
             return palette;
         }
         this.shadeButton = function (value) {
-            const button = this.child("div").style({
+            const button = this.child("div").style().set({
                 "display": "inline-flex",
                 "width": "50px",
                 "height": "50px",
@@ -77,11 +77,11 @@ export const components = {
     },
     metadata: {
         name: "Components for LiOS-Colors",
-        version: "1.0.0",
-        versionCode: 1,
+        version: "1.1.0",
+        versionCode: 2,
         api: {
-            min: 1,
-            max: 2
+            min: 2,
+            max: 3
         },
         capabilities: {
             addsMethods: true,

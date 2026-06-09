@@ -31,27 +31,27 @@ const main = async () => {
     ui.extend("components", components);
     ui.extend("colors", localComponents);
 
-    const main = new ui("main").style({
+    const main = new ui("main").style().set({
         "display": "flex",
         "flex-direction": "column",
         "align-items": "center",
         "gap": "15px"
     });
     // Shades Filters
-    const shadesFilter = main.child("div").class.add("lios-card", "lios-frosted-glass").style({
+    const shadesFilter = main.child("div").class.add("lios-card", "lios-frosted-glass").style().set({
         "background": "var(--frosted-color-2)",
         "border": "2px outset var(--frosted-color-2)",
         "width": "90%",
         "justify-self": "center"
     });
 
-    const shadesFilterButtons = shadesFilter.child("div").style({
+    const shadesFilterButtons = shadesFilter.child("div").style().set({
         display: "flex",
         "justify-self": "center",
         "gap": "5px",
         "flex-wrap": "wrap"
     });
-    const shadeView = main.child("div").class.add("lios-card-container").style({
+    const shadeView = main.child("div").class.add("lios-card-container").style().set({
         "display": "none",
         "justify-content": "center",
         "justify-self": "center",
@@ -79,7 +79,7 @@ const main = async () => {
     };
     
     // 
-    const defaultView = main.child("div").class.add("lios-card-container").style({
+    const defaultView = main.child("div").class.add("lios-card-container").style().set({
         "gap": "15px",
         "justify-content": "center",
         "justify-self": "center"
@@ -132,7 +132,7 @@ const main = async () => {
     // 
     // Restore default 
     const restoreDefault = () => {
-        activeView.style({
+        activeView.style().set({
             "display": "none"
         });
         activeData = colorData;
@@ -145,7 +145,7 @@ const main = async () => {
     }
     // 
     // Search 
-    const searchView = main.child("div").class.add("lios-card-container").style({
+    const searchView = main.child("div").class.add("lios-card-container").style().set({
         "display": "none",
         "justify-content": "center",
         "justify-self": "center",
@@ -175,12 +175,12 @@ const main = async () => {
         });
 
         activeData = searchData
-        activeView.style({
+        activeView.style().set({
             "display": "none"
         });
         activeView = searchView;
         activeView.getElement().innerHTML = "";
-        searchView.style({
+        searchView.style().set({
             "display": "flex"
         })
         generatePalettes(activeData.slice(activeStartingIndex, activeFinalIndex));

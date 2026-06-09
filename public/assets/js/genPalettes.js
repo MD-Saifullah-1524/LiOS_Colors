@@ -13,7 +13,7 @@ const params = url.searchParams;
 const defaultHex = params.get("hex");
 
 const main = new ui("main");
-main.style({
+main.style().set({
     "padding-bottom": "100px"
 });
 
@@ -24,7 +24,7 @@ main.child("br");
 // 
 
 // Main content
-const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass", "gen-content-box").style({
+const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass", "gen-content-box").style().set({
     "width": "90%",
     "border-radius": "15px",
     "background": "var(--frosted-color-2)",
@@ -33,7 +33,7 @@ const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass"
 });
 
 const inputArea = contentBox.child("div").class.add("gen-input-area");
-const inputBox = inputArea.child("input").style({
+const inputBox = inputArea.child("input").style().set({
     "outline": "none",
     "border-radius": "5px",
     "background": "var(--frosted-color-4)",
@@ -46,18 +46,26 @@ const paletteShadesGeneration = (inputData) => {
 
     paletteArea.getElement().innerHTML = "";
 
-    paletteArea.child("h2").style({
-        "text-align": "center"
+    paletteArea.child("h2").style().set({
+        "text-align": "center",
     }).text("Palettes");
 
-    const paletteContainer = paletteArea.child("div").style({
+    const paletteContainer = paletteArea.child("div").style().set({
+        "overflow": "auto",
+        "padding": "inherit",
+        "background": "var(--frosted-color-1)",
+        "border": "4px inset var(--frosted-color-1)"
+    });
+
+    const paletteStripBox = paletteContainer.child("div").style().set({
         "display": "flex",
         "flex-direction": "row",
         "overflow": "auto",
-        "justify-content":"center"
+        "justify-content": "center",
+        "width":"fit-content"
     });
     palette.forEach((shade) => {
-        const newPalette = paletteContainer.child("div").class.add("gen-palette-strip").style({
+        const newPalette = paletteStripBox.child("div").class.add("gen-palette-strip").style().set({
             "background": shade
         });
         const copyButton = newPalette.components().actionButton().text(shade).on("click", () => {
@@ -70,11 +78,11 @@ const paletteShadesGeneration = (inputData) => {
     paletteArea.child("br");
     paletteArea.child("br");
 
-    paletteArea.child("h2").style({
+    paletteArea.child("h2").style().set({
         "text-align": "center"
     }).text("CSS");
 
-    const CSSBlock = paletteArea.child("div").class.add("lios-frosted-glass", "lios-card").style({
+    const CSSBlock = paletteArea.child("div").class.add("lios-frosted-glass", "lios-card").style().set({
         "background": "var(--frosted-color-1)",
         "border": "2px inset var(--frosted-color-1)",
         "width": "90%",
@@ -105,7 +113,7 @@ const inputSubmit = inputArea.components().actionButton().text("Generate").on("c
     contentBox.child("br");
     contentBox.child("br");
 
-    const paletteArea = contentBox.child("div").style({
+    const paletteArea = contentBox.child("div").style().set({
         "display": "flex",
         "flex-direction": "column",
         "justify-content": "center"
