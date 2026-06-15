@@ -1,3 +1,9 @@
+## 4.0.1
+
+### Bugfix
+
+- Fixed UI and functional bugs related to `generate-palette` page.
+
 ## 4.0.0 (North Wind)
 
 ### What's new

@@ -20,12 +20,15 @@
   margin-bottom: 5px;
 }
 .gen-hero-box {
-  background: var(--frosted-color-2);
-  border: 2px outset var(--frosted-color-2);
-  color: var(--color-3);
+  background: var(--frosted-white);
+  border: 2px outset var(--frosted-white);
+  color: var(--black);
   justify-self: center;
   
   & h1{
     text-align: center;
   }
+}
+.gen-hero-box:placeholder-shown{
+  color: var(--black);
 }

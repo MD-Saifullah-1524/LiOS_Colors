@@ -1,12 +1,11 @@
 import { liosOpen } from "../../LiOS-Open/liosOpen.js";
 import { colorConvertor } from "./tools/colorConvertor.js";
 import { colorUtil } from "../../LiOS-Colors-Utility/colorUtil.js";
-import { components } from "../../LiOS-Open/modules/JS/ui/components.js";
 import { webUtils } from "../../LiOS-Web-Utils/liosWebUtils.js";
 
 const ui = liosOpen.ui;
 
-ui.extend("components", components);
+ui.extend("components", liosOpen.uiExtensions.components);
 
 const url = new URL(window.location.href);
 const params = url.searchParams;
@@ -16,6 +15,19 @@ const main = new ui("main");
 main.style().set({
     "padding-bottom": "100px"
 });
+
+const buttonsContainer = main.components().buttonGroup();
+    buttonsContainer.style().set({
+        "color": "var(--black)",
+        "justify-self": "center",
+        "display": "flex"
+    }).style(" .lios-button").set({
+        "border":"2px inset var(--primary)"
+    });
+    const browse = buttonsContainer.components().button("a").href("/browse").text("Browse Colors");
+    const paletteGenerator = buttonsContainer.components().button("a").href("/generate-palette").text("Generate Palette");
+    const about = buttonsContainer.components().button("a").href("/about").text("About");
+    const github = buttonsContainer.components().button("a").href("https://github.com/LiOS-Org/LiOS-Colors").text("Github");
 
 // 
 // Line breaks
@@ -27,8 +39,8 @@ main.child("br");
 const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass", "gen-content-box").style().set({
     "width": "90%",
     "border-radius": "15px",
-    "background": "var(--frosted-color-2)",
-    "border": "2px outset var(--frosted-color-2)",
+    "background": "var(--frosted-white)",
+    "border": "2px outset var(--frosted-white)",
     "justify-self": "center"
 });
 
@@ -41,7 +53,7 @@ const inputBox = inputArea.child("input").style().set({
 }).class.add("lios-frosted-glass").attr({
     "placeholder":"Input Hex color"
 });
-const paletteShadesGeneration = (inputData, steps = 12) => {
+const paletteShadesGeneration = (inputData, steps = 7) => {
     const palette = colorUtil.newPalette(inputData, { steps: steps });
 
     paletteArea.getElement().innerHTML = "";
@@ -83,13 +95,14 @@ const paletteShadesGeneration = (inputData, steps = 12) => {
     }).text("CSS");
 
     const CSSBlock = paletteArea.child("div").class.add("lios-frosted-glass", "lios-card").style().set({
-        "background": "var(--frosted-color-1)",
-        "border": "2px inset var(--frosted-color-1)",
+        "background": "var(--frosted-white)",
+        "border": "2px inset var(--frosted-white)",
         "width": "90%",
         "display": "flex",
         "white-space": "pre-wrap",
         "font-family": "monospace",
-        "place-self": "center"
+        "place-self": "center",
+        "color": "var(--black)"
     });
     const CSS = colorUtil.CSS(inputData);
 // Keep it as it is, template literals preserves source indentation: Important
