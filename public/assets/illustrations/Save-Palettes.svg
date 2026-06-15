@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-550,-550)">
+        <rect id="Save-Palettes" x="550" y="550" width="500" height="500" style="fill:none;"/>
+        <g id="Save-Palettes1" serif:id="Save-Palettes">
+            <g transform="matrix(1,0,0,1,1.482361,5.013826)">
+                <path d="M797.87,662.083L804.517,637.5C839.992,571.922 901.559,561.233 946.167,570.532C967.762,575.034 985.383,585.75 994.145,594.269C1002.531,602.422 1021.519,621.16 1027.766,652.37C1030.165,664.357 1033.208,679.303 1031.128,694.926C1029.179,709.561 1023.367,725.669 1017.881,743.017C991.501,826.439 921.461,879.962 920.536,880.758C816.266,970.488 820.178,1002.028 800.172,1022.342C748.443,954.104 754.318,948.854 667.967,872.284C568.963,784.495 548.984,689.921 576.493,630.2C598.016,583.472 650.161,558.468 705.992,572.171C782.171,590.869 796.575,658.869 797.87,662.083Z" style="fill:rgb(198,16,30);"/>
+            </g>
+        </g>
+    </g>
+</svg>

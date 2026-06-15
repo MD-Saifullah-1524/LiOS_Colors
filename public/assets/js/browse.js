@@ -1,7 +1,6 @@
 import { metadata } from "./metadata.js";
 import { liosOpen } from "../../LiOS-Open/liosOpen.js";
 import { webUtils } from "../../LiOS-Web-Utils/liosWebUtils.js";
-import { components } from "../../LiOS-Open/modules/JS/ui/components.js";
 import {components as localComponents} from "../../extensions/components.js"
 // Global Variables
 const loader = document.querySelector(".hero-loader");
@@ -9,7 +8,11 @@ const scrollToTop = document.querySelector(".scroll-to-top-pebble");
 let infiniteScrollLogic;
 // 
 // Main Function
+const url = new URL(window.location.href);
+const params = url.searchParams;
+const defaultName = params.get("name");
 const main = async () => {
+    
     const colorShades = ["violet", "indigo", "blue", "green", "yellow", "orange", "red", "white", "black"]
     const colorData = [];
     const colorDict = {};
@@ -28,7 +31,7 @@ const main = async () => {
         });
     };
     const ui = liosOpen.ui
-    ui.extend("components", components);
+    ui.extend("components", liosOpen.uiExtensions.components);
     ui.extend("colors", localComponents);
 
     const main = new ui("main").style().set({
@@ -39,8 +42,8 @@ const main = async () => {
     });
     // Shades Filters
     const shadesFilter = main.child("div").class.add("lios-card", "lios-frosted-glass").style().set({
-        "background": "var(--frosted-color-2)",
-        "border": "2px outset var(--frosted-color-2)",
+        "background": "var(--frosted-white)",
+        "border": "2px outset var(--frosted-white)",
         "width": "90%",
         "justify-self": "center"
     });
@@ -63,11 +66,11 @@ const main = async () => {
             if (activeView === defaultView) {
                 backupDefaultIndexes()
             };
-            activeView.style({
+            activeView.style().set({
                 "display": "none"
             });
             activeView = shadeView
-            activeView.style({
+            activeView.style().set({
                 "display": "flex"
             });
             activeStartingIndex = 0;
@@ -139,7 +142,7 @@ const main = async () => {
         activeView = defaultView;
         activeStartingIndex = startingIndex;
         activeFinalIndex = finalIndex;
-        defaultView.style({
+        defaultView.style().set({
             "display": "flex"
         });
     }
@@ -154,19 +157,19 @@ const main = async () => {
     const searchBar = document.querySelector(".search-bar.pebble");
     let searchData = [];
     let currentData = colorData;
-    searchBar.addEventListener("input", () => {
+    const search = () => {
         const searchValue = searchBar.value.toLowerCase().trim();
         if (searchValue.length === 0) {
             reset();
             return;
-        }
+        };
 
         if (activeView !== searchView) {
             if (activeView === defaultView) {
                 backupDefaultIndexes();
             }
             currentData = activeData;
-        }
+        };
 
         activeStartingIndex = 0;
         activeFinalIndex = batch;
@@ -184,7 +187,14 @@ const main = async () => {
             "display": "flex"
         })
         generatePalettes(activeData.slice(activeStartingIndex, activeFinalIndex));
+    };
+    searchBar.addEventListener("input", () => {
+        search();
     });
+    if (defaultName) {
+        searchBar.value = defaultName;
+        search();
+    };
     // 
 };
 // 

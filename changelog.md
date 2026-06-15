@@ -1,3 +1,19 @@
+## 4.0.0 (North Wind)
+
+### What's new
+
+- Brand new UI
+- Ability to share a color
+- Foundation for future upcoming releases.
+  
+## Changes
+
+- A lot of refactoring consisting
+  - Leveraging new APIs from `LiOS-Open` to gain performance and consistency
+  - Home page is now meaningful
+  - New but familiar color palette
+  - Replaced some bulky action buttons with a button group
+
 ## 3.3.1
 
 ### Bugfixes

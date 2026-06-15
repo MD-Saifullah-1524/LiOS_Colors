@@ -7,9 +7,10 @@
     min-height: 400px;
     width: 325px;
     height: 450px;
-    --background:var(--frosted-color-2);
+    --background:var(--frosted-white);
     background: var(--background);
     border: 2px outset var(--background);
+    color: var(--white)
 }
 .palette-color{
     display: flex;
@@ -23,6 +24,7 @@
     justify-self: center;
     flex-direction: row;
     align-items: center;
+    color: var(--black);
     padding: 5px;
     border-radius: 5px;
     gap: 2px;

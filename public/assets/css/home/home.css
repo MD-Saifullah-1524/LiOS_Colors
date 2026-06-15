@@ -1,33 +1,12 @@
-.hero-desc{
-    width: 95%;
-    color: var(--color-3);
-    & p{
-        font-weight: bold;
-        font-size: 16px;
-        text-align: center;
-    }
-}
-.hero-buttons{
-    flex-wrap: wrap;
-}
-.installation-usage-card{
-    text-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    flex: 1;
-    color: var(--color-3);
-
-    & li{
-        font-weight: bold;
-        font-size: 16px;
-    }
-}
-.installation-usage-card pre{
-    text-wrap: wrap;
-}
-.installation-usage-buttons{
-    display: flex;
-    margin-top: 15px;
+.home-desc{
+    --background: var(--white);
+    background: var(--background);
+    border: 2px inset var(--background);
+    text-align: center;
+    width: 90%;
     justify-self: center;
+    padding: 15px;
+    font-size: 22px;
+    border-radius: 5px;
+    color: var(--black);
 }

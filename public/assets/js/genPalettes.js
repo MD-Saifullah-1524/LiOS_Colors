@@ -41,8 +41,8 @@ const inputBox = inputArea.child("input").style().set({
 }).class.add("lios-frosted-glass").attr({
     "placeholder":"Input Hex color"
 });
-const paletteShadesGeneration = (inputData) => {
-    const palette = colorUtil.newPalette(inputData);
+const paletteShadesGeneration = (inputData, steps = 12) => {
+    const palette = colorUtil.newPalette(inputData, { steps: steps });
 
     paletteArea.getElement().innerHTML = "";
 

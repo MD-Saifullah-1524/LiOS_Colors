@@ -1,11 +1,11 @@
 {
     "$schema": "https://schema.liosorg.com/metadata/v2/schema.json",
     "name": "LiOS Colors",
-    "description": "LiOS-Colors is a browsable library of beautiful colors, it's main aim is to provide translucent colors for UI design. LiOS-Colors is a part of the LiOS-Org and is based on data from meodai/color-names.",
+    "description": "LiOS-Colors is a browsable library of beautiful colors, it's main aim is to provide translucent colors and the ability to generate color palettes on the go for UI design.",
     "version": {
-        "number": "3.3.1",
-        "code": 6,
-        "name":"Eastern Desert"
+        "number": "4.0.0",
+        "code": 7,
+        "name":"North Wind"
     },
     "github": "https://github.com/LiOS-Org/LiOS-Colors",
     "license": {

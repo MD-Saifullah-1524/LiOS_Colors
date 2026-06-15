@@ -16,7 +16,7 @@
     padding: 10px;
     gap: 15px;
     margin: 15px;
-    --background:var(--frosted-color-2);
+    --background:var(--frosted-white);
     background: var(--background);
     border: 2px outset var(--background);
     border-radius: 15px;

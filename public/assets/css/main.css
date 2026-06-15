@@ -1,36 +1,7 @@
 :root{
-    background: radial-gradient(circle,var(--color-1),var(--color-5));
+    background: radial-gradient(circle,var(--primary),var(--secondary));
 }
-.hero-logo{
-    display: flex;
-    padding: 10px;
-    width: max-content;
-    height: max-content;
-    border-radius: 25px;
-    justify-self: center;
-    align-self: center;
-    --background:var(--frosted-color-2);
-    background: var(--background);
-    border: 2px outset var(--background);
-}
-.hero-logo img{
-    size: 1/1;
-    width: 25vw;
-}
-.hero-desc,.installation-usage-card{
-    color: var(--color-4);
-    margin-top: 15px;
-    border-radius: 15px;
-    padding: 5px;
-    box-sizing: border-box;
-    --background:var(--frosted-color-2);
-    background: var(--background);
-    border: 2px outset var(--background);
-    justify-self: center;
-}
-.hero-desc h1{
-    text-align: center;
-}
+
 .hero-loader{
     z-index: 1000;
     display: flex;
@@ -69,4 +40,15 @@ a.lios-action-button{
 .copyable-code code{
     overflow-x: auto;
     text-wrap: wrap;
+}
+.main-container{
+    --background: var(--frosted-white);
+    background: var(--background);
+    border: 2px outset var(--background);
+    border-radius: 15px;
+}
+.title-text{
+    text-align: center;
+    font-size: 80px;
+    --lios-text-shadow-color: var(--color-3);
 }

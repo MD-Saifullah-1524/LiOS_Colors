@@ -14,11 +14,10 @@ button{
     all: unset; 
 }
 .pebble{
-    color: var(--color-3);
     text-align: center;
     font-size: 18px;
     border-radius: 100vh;
-    --background: var(--frosted-color-2);
+    --background: var(--frosted-white);
     background: var(--background);
     border: 2px outset var(--background);
     height: 50px;
@@ -30,12 +29,13 @@ button{
     justify-content: center;
     display: flex;
     transition: all 0.5s ease-in-out;
+    color: var(--black);
 }
 .reset-pebble{
     display: none;
 }
 .pebble:hover{
-  --background:var(--frosted-color-1);
+  --background:var(--frosted-color-2);
   transition: all 0.5s ease-in-out;
 }
 .search-bar {
@@ -43,12 +43,12 @@ button{
     border: none;
     min-width: 100px;
     width: 60%;
-    --background: var(--frosted-color-2);
+    --background: var(--frosted-white);
     background: var(--background);
     border: 2px outset var(--background);
 }
 .search-bar::placeholder{
-    color: var(--color-3);
+    color: var(--black);
 }
 .pebble svg{
     height: 45px;
