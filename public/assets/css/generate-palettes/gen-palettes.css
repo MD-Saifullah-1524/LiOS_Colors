@@ -1,8 +1,8 @@
 .gen-input-area {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-self: center;
+  width: 80%;
   gap: 5px;
 }
 .gen-palette-strip {

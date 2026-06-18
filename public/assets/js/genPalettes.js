@@ -44,15 +44,45 @@ const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass"
     "justify-self": "center"
 });
 
-const inputArea = contentBox.child("div").class.add("gen-input-area");
-const inputBox = inputArea.child("input").style().set({
+const inputStyle = {
     "outline": "none",
     "border-radius": "5px",
     "background": "var(--frosted-color-4)",
-    "border":"2px inset var(--frosted-color-4)"
-}).class.add("lios-frosted-glass").attr({
-    "placeholder":"Input Hex color"
-});
+    "border": "2px inset var(--frosted-color-4)",
+};
+
+const inputArea = contentBox.child("div").class.add("gen-input-area");
+
+const fieldStyle = {
+    "color": "var(--black)",
+    "width": "80%",
+    "display":"flex",
+    "justify-content": "space-between",
+    "font-size":"24px"
+}
+
+const inputBox = inputArea.child("div").style().set(fieldStyle);
+const hexText = inputBox.child("span").text("Hex: ")
+const hexInput = inputBox.child("input").style().set(inputStyle).style("::placeholder").set({
+    "color": "var(--color-1)"
+}).class.add("lios-frosted-glass").placeholder("Input Hex color");
+const getHex = () => {
+    const hex = hexInput.getElement().value;
+    if (hex[0] === "#") {
+        return hex;
+    } else {
+        return `#${hex}`;
+    };
+};
+
+const stepsBox = inputArea.child("div").style().set(fieldStyle);
+const stepsText = stepsBox.child("span").text("Number of shades: ")
+const stepsInput = stepsBox.child("input").style().set(inputStyle).style("::placeholder").set({
+    "color": "var(--color-1)"
+}).class.add("lios-frosted-glass").placeholder("shades, default = 7");
+
+stepsInput.getElement().value = 7;
+
 const paletteShadesGeneration = (inputData, steps = 7) => {
     const palette = colorUtil.newPalette(inputData, { steps: steps });
 
@@ -74,7 +104,8 @@ const paletteShadesGeneration = (inputData, steps = 7) => {
         "flex-direction": "row",
         "overflow": "auto",
         "justify-content": "center",
-        "width":"fit-content"
+        "width": "fit-content",
+        "justify-self": "center"
     });
     palette.forEach((shade) => {
         const newPalette = paletteStripBox.child("div").class.add("gen-palette-strip").style().set({
@@ -104,7 +135,7 @@ const paletteShadesGeneration = (inputData, steps = 7) => {
         "place-self": "center",
         "color": "var(--black)"
     });
-    const CSS = colorUtil.CSS(inputData);
+    const CSS = colorUtil.CSS(inputData, stepsInput.getElement().value);
 // Keep it as it is, template literals preserves source indentation: Important
     const formattedCSS =`:root {
 ${Object.entries(CSS).map(([key, value]) => `  ${key}: ${value};`).join("\n")}
@@ -119,8 +150,8 @@ ${Object.entries(CSS).map(([key, value]) => `  ${key}: ${value};`).join("\n")}
 
 };
 const inputSubmit = inputArea.components().actionButton().text("Generate").on("click", () => {
-    const inputData = inputBox.getElement().value.trim();
-    paletteShadesGeneration(inputData);
+    const inputData = getHex();
+    paletteShadesGeneration(inputData, stepsInput.getElement().value);
 });
 
     contentBox.child("br");
@@ -135,6 +166,7 @@ const inputSubmit = inputArea.components().actionButton().text("Generate").on("c
 
 // Auto generate
 if (defaultHex) {
-    paletteShadesGeneration(defaultHex);
+    paletteShadesGeneration(defaultHex, stepsInput.getElement().value);
+    hexInput.getElement().value = defaultHex;
 };
 // 

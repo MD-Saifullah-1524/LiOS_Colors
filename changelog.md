@@ -1,3 +1,9 @@
+## 4.1.0
+
+### New Features
+
+- On the generate page, now users can provide custom `steps`(number of shades) to generate a custom number of shades
+
 ## 4.0.1
 
 ### Bugfix

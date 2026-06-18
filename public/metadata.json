@@ -3,8 +3,8 @@
     "name": "LiOS Colors",
     "description": "LiOS-Colors is a browsable library of beautiful colors, it's main aim is to provide translucent colors and the ability to generate color palettes on the go for UI design.",
     "version": {
-        "number": "4.0.0",
-        "code": 7,
+        "number": "4.1.0",
+        "code": 9,
         "name":"North Wind"
     },
     "github": "https://github.com/LiOS-Org/LiOS-Colors",
