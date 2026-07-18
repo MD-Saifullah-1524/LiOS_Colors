@@ -1,3 +1,11 @@
+## 4.1.1
+
+### Fixes & Improvements
+
+- Fixed the clipping of generated palettes on smaller screens.
+- Removed redundant navigation buttons that are `home` button on `home-page`, `generate palettes` button on `generate-palettes` page.
+- Mapped `home` icon on the browse page `/browse` to `/`
+
 ## 4.1.0
 
 ### New Features

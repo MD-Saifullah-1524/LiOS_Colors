@@ -24,9 +24,8 @@ const buttonsContainer = main.components().buttonGroup();
     }).style(" .lios-button").set({
         "border":"2px inset var(--primary)"
     });
+    const home = buttonsContainer.components().button("a").href("/").text("Home");
     const browse = buttonsContainer.components().button("a").href("/browse").text("Browse Colors");
-    const paletteGenerator = buttonsContainer.components().button("a").href("/generate-palette").text("Generate Palette");
-    const about = buttonsContainer.components().button("a").href("/about").text("About");
     const github = buttonsContainer.components().button("a").href("https://github.com/LiOS-Org/LiOS-Colors").text("Github");
 
 // 
@@ -96,16 +95,16 @@ const paletteShadesGeneration = (inputData, steps = 7) => {
         "overflow": "auto",
         "padding": "inherit",
         "background": "var(--frosted-color-1)",
-        "border": "4px inset var(--frosted-color-1)"
+        "border": "4px inset var(--frosted-color-1)",
+        "width": "95%",
+        "justify-self": "center"
     });
 
     const paletteStripBox = paletteContainer.child("div").style().set({
-        "display": "flex",
         "flex-direction": "row",
         "overflow": "auto",
         "justify-content": "center",
-        "width": "fit-content",
-        "justify-self": "center"
+        "display": "inline-flex"
     });
     palette.forEach((shade) => {
         const newPalette = paletteStripBox.child("div").class.add("gen-palette-strip").style().set({
@@ -157,11 +156,12 @@ const inputSubmit = inputArea.components().actionButton().text("Generate").on("c
     contentBox.child("br");
     contentBox.child("br");
 
-    const paletteArea = contentBox.child("div").style().set({
-        "display": "flex",
-        "flex-direction": "column",
-        "justify-content": "center"
-    });
+const paletteArea = contentBox.child("div").style().set({
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "center",
+    "overflow":"auto"
+});
 // 
 
 // Auto generate

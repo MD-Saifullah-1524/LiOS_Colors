@@ -19,7 +19,6 @@ const main = async () => {
     });
     const browse = buttonsContainer.components().button("a").href("./browse").text("Browse Colors");
     const paletteGenerator = buttonsContainer.components().button("a").href("./generate-palette").text("Generate Palette");
-    const about = buttonsContainer.components().button("a").href("./about").text("About");
     const github = buttonsContainer.components().button("a").href("https://github.com/LiOS-Org/LiOS-Colors").text("Github");
 
     home.child("br");
