@@ -1,7 +1,10 @@
 .gen-input-area {
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-inline: auto;
   width: 80%;
   gap: 5px;
 }
@@ -15,15 +18,20 @@
 .gen-palette-strip-button {
   width: fit-content;
   display: flex;
-  justify-self: center;
-  align-self: bottom;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-inline: auto;
   margin-bottom: 5px;
 }
 .gen-hero-box {
   background: var(--frosted-white);
   border: 2px outset var(--frosted-white);
   color: var(--black);
-  justify-self: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-inline: auto;
   
   & h1{
     text-align: center;

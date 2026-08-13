@@ -45,19 +45,29 @@ const main = async () => {
         "background": "var(--frosted-white)",
         "border": "2px outset var(--frosted-white)",
         "width": "90%",
-        "justify-self": "center"
+        "align-self": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto"
     });
 
     const shadesFilterButtons = shadesFilter.child("div").style().set({
         display: "flex",
-        "justify-self": "center",
+        "align-self": "center",
+        "justify-content": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto",
         "gap": "5px",
         "flex-wrap": "wrap"
     });
     const shadeView = main.child("div").class.add("lios-card-container").style().set({
         "display": "none",
         "justify-content": "center",
-        "justify-self": "center",
+        "align-self": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto",
         "gap":"15px"
     });
     for (const shade of colorShades) {
@@ -85,7 +95,10 @@ const main = async () => {
     const defaultView = main.child("div").class.add("lios-card-container").style().set({
         "gap": "15px",
         "justify-content": "center",
-        "justify-self": "center"
+        "align-self": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto"
     });
     
     let activeView = defaultView;
@@ -151,7 +164,10 @@ const main = async () => {
     const searchView = main.child("div").class.add("lios-card-container").style().set({
         "display": "none",
         "justify-content": "center",
-        "justify-self": "center",
+        "align-self": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto",
         "gap": "15px"
     });
     const searchBar = document.querySelector(".search-bar.pebble");

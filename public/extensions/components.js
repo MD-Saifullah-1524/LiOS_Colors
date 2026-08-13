@@ -3,7 +3,12 @@ import { webUtils } from "../LiOS-Web-Utils/liosWebUtils.js";
 export const components = {
     method: function () {
         this.paletteButton = function (value) {
-            const button = this.child("div").class.add("palettes-button");
+            const button = this.child("div").class.add("palettes-button").style().set({
+                "display": "inline-flex",
+                "margin-left": "0",
+                "margin-right": "0",
+                "margin-inline": "0"
+            });
             const colorValue = button.child("div").class.add("palettes-color-value").child("span").text(value);
             const svgButton = button.child("div").class.add("palettes-copy-button", "copy-hex").svg(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-icon lucide-clipboard"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>`);
             button.on("click", () => {
@@ -30,7 +35,14 @@ export const components = {
             });
             const colorName = palette.child("div").class.add("lios-card-title").child("span").text(name);
 
-            const buttonsContainer = palette.child("div").class.add("palettes-button-container")
+            const buttonsContainer = palette.child("div").class.add("palettes-button-container").style().set({
+                "display": "inline-flex",
+                "flex-direction": "row",
+                "flex-wrap": "wrap",
+                "justify-content": "center",
+                "align-items": "center",
+                "gap": "8px"
+            });
             buttonsContainer.colors().paletteButton(hex);
             buttonsContainer.colors().paletteButton(`hsl(${hsl})`);
             buttonsContainer.colors().paletteButton(`srgb(${srgb})`);
@@ -40,7 +52,13 @@ export const components = {
             palette.child("br");
 
             const ctaContainer = palette.components().buttonGroup().style().set({
-                "color": "var(--black)"
+                "color": "var(--black)",
+                "display": "inline-flex",
+                "flex-direction": "row",
+                "flex-wrap": "wrap",
+                "justify-content": "center",
+                "align-items": "center",
+                "gap": "8px"
             });
             
             if (navigator.share) {
@@ -96,13 +114,15 @@ export const components = {
             const illustration = card.child("img").src(values.svg).style().set({
                 "size": "1/1",
                 "width": "200px",
-                "justify-self": "center",
                 "padding": "5px",
-                "diplay": "flex"
-            }).style().set({
                 "display": "flex",
                 "align-self": "center",
-                "justify-self": "center"
+                "margin-left": "auto",
+                "margin-right": "auto",
+                "margin-inline": "auto"
+            }).style().set({
+                "display": "flex",
+                "align-self": "center"
             });
             card.child("br");
             const title = card.child("h3").text(values.title)
@@ -115,8 +135,8 @@ export const components = {
     },
     metadata: {
         name: "Components for LiOS-Colors",
-        version: "1.2.0",
-        versionCode: 3,
+        version: "1.2.1",
+        versionCode: 4,
         api: {
             min: 2,
             max: 3

@@ -4,7 +4,10 @@
     border: 2px inset var(--background);
     text-align: center;
     width: 90%;
-    justify-self: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
     padding: 15px;
     font-size: 22px;
     border-radius: 5px;

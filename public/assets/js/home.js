@@ -12,8 +12,12 @@ const main = async () => {
     const buttonsContainer = home.components().buttonGroup();
     buttonsContainer.style().set({
         "color": "var(--black)",
-        "justify-self": "center",
-        "display": "flex"
+        "display": "flex",
+        "align-self": "center",
+        "justify-content": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto"
     }).style(" .lios-button").set({
         "border":"2px inset var(--primary)"
     });

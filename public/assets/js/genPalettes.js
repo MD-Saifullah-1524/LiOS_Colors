@@ -19,8 +19,12 @@ main.style().set({
 const buttonsContainer = main.components().buttonGroup();
     buttonsContainer.style().set({
         "color": "var(--black)",
-        "justify-self": "center",
-        "display": "flex"
+        "display": "flex",
+        "align-self": "center",
+        "justify-content": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto"
     }).style(" .lios-button").set({
         "border":"2px inset var(--primary)"
     });
@@ -40,7 +44,10 @@ const contentBox = main.child("div").class.add("lios-card", "lios-frosted-glass"
     "border-radius": "15px",
     "background": "var(--frosted-white)",
     "border": "2px outset var(--frosted-white)",
-    "justify-self": "center"
+    "align-self": "center",
+    "margin-left": "auto",
+    "margin-right": "auto",
+    "margin-inline": "auto"
 });
 
 const inputStyle = {
@@ -97,7 +104,10 @@ const paletteShadesGeneration = (inputData, steps = 7) => {
         "background": "var(--frosted-color-1)",
         "border": "4px inset var(--frosted-color-1)",
         "width": "95%",
-        "justify-self": "center"
+        "align-self": "center",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "margin-inline": "auto"
     });
 
     const paletteStripBox = paletteContainer.child("div").style().set({

@@ -16,7 +16,10 @@ import { metadata } from "./metadata.js";
                 size: 1/1;
                 width: 20vw;
                 display: flex;
-                justify-self: center;
+                align-self: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
                 margin-top: 15px;
             `,
             "src": metadata.favicon

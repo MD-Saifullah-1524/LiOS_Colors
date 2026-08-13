@@ -1,3 +1,10 @@
+## 4.1.2
+
+### Fixes & Improvements
+
+- Replaced unsupported `justify-self` centering on flex items with flex-compatible centering.
+- Improved palette and shade button alignment with inline wrapping and consistent gaps.
+
 ## 4.1.1
 
 ### Fixes & Improvements
